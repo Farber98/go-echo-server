@@ -1,7 +1,7 @@
 package main
 
 import (
-	controller "github.com/Farber98/go-echo-server/internal/controllers"
+	controllers "github.com/Farber98/go-echo-server/internal/controllers"
 	"github.com/labstack/echo/v4"
 )
 
@@ -12,5 +12,7 @@ func initRouter() *echo.Echo {
 }
 
 func initRoutes(r *echo.Echo) {
-	r.GET("/", controller.TestServer)
+	r.GET("/", controllers.TestServer)
+	r.GET("/cats", controllers.GetCatsByQueryParam)
+	r.GET("/cats/:id", controllers.GetCatById)
 }
