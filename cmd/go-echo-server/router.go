@@ -15,4 +15,6 @@ func initRoutes(r *echo.Echo) {
 	r.GET("/", controllers.TestServer)
 	r.GET("/cats", controllers.GetCatsByQueryParam)
 	r.GET("/cats/:id", controllers.GetCatById)
+	r.POST("/catecho", controllers.AddCatByBodyWithEcho)
+	r.POST("/catio", controllers.AddCatByBodyWithIo)
 }
