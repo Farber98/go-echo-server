@@ -22,7 +22,7 @@ func initRoutes(r *echo.Echo) {
 	}))
 
 	adminGroup.Use(middleware.BasicAuth(func(username, password string, c echo.Context) (bool, error) {
-		if subtle.ConstantTimeCompare([]byte(username), []byte("Jac")) == 1 &&
+		if subtle.ConstantTimeCompare([]byte(username), []byte("Jack")) == 1 &&
 			subtle.ConstantTimeCompare([]byte(password), []byte("1234")) == 1 {
 			return true, nil
 		}
